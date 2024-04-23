@@ -8,7 +8,7 @@ function AuthenticatedNavLinks(clearToken) {
   return (
     <div className="flex items-center md:gap-x-8 gap-x-2">
       <NavLink
-        to={routePath.about}
+        to={routePath.userManagement}
         className={({ isActive }) => (isActive ? "text-primary" : "")}
       >
         About Page

@@ -12,6 +12,10 @@ const LoginPage = lazy(() => import("@/pages/auth/login"));
 /* Public Page Imports */
 const AboutPage = lazy(() => import("@/pages/public/about"));
 const DashBoardPage = lazy(() => import("@/pages/private/dashboard"));
+const UserManagementPage = lazy(() =>
+  import("@/pages/private/user-management")
+);
+
 /* Private Page Imports */
 const Routes = () => {
   const { token } = useAuth();
@@ -38,6 +42,10 @@ const Routes = () => {
         {
           index: true,
           element: <DashBoardPage />,
+        },
+        {
+          path:routePath.userManagement,
+          element: <UserManagementPage />,
         },
       ],
     },
