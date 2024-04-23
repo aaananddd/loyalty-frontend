@@ -11,7 +11,7 @@ function AuthenticatedNavLinks(clearToken) {
           clearToken();
           // navigate(routePath.login, { replace: true });
         }}
-        className="bg-gray-600 hover:bg-gray-400 text-slate-200 "
+        className="bg-neutral-50 hover:bg-primary text-black "
       >
         <LogOut className="w-5 h-5" /> <h1>Logout</h1>
       </Button>

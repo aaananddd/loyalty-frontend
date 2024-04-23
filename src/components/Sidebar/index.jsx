@@ -57,18 +57,16 @@ const Sidebar = () => {
           <Accordion type="single" collapsible>
             <AccordionItem className="border-none" value="item-1">
               <AccordionTrigger className="w-full h-10 font-medium p-6 flex   hover:no-underline items-center text-center hover:bg-primary rounded  duration-75">
-                <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" /> Point
+                <div><HandCoins strokeWidth={3} className="w-5 h-10 mr-2" /></div> Point
                 Management
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="bg-primary/20 rounded-md" >
                   <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
-                    <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
-                    Coupon Management
+                   Earn Point
                   </li>
                   <li className="w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75">
-                    <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
-                    Coupon Management
+                  Burn Point
                   </li>
                 </ul>
               </AccordionContent>
