@@ -1,3 +1,4 @@
+import routePath from "@/router/routePath";
 import {
   CircleUser,
   ClipboardPen,
@@ -11,53 +12,88 @@ import {
   Wrench,
 } from "lucide-react";
 import React from "react";
+import { NavLink } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Sidebar = () => {
   return (
-    <div className="w-[21%] min-h-screen border-2 bg-white items-center">
-      <div className="w-full flex  flex-col items-center">
-        <ul className="w-[81%] text-black flex flex-col min-h-min pt-10 ">
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <Home strokeWidth={3} className=" w-5 mr-2 " /> Dashboard
-          </li>
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <CircleUser className="w-5 h-10 mr-2" /> User Management
-          </li>
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <UsersRound className="w-5 h-10 mr-2" />
+    <div className=" min-h-screen border-r-2 bg-white items-center">
+      <div className="w-[18vw] flex  flex-col items-center">
+        <ul className="px-4 text-black flex flex-col min-h-min pt-10 gap-y-1 ">
+          <NavLink
+            to={routePath.dashboard}
+            className={({ isActive }) =>
+              (isActive ? "bg-primary " : "") +
+              `w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75 `
+            }
+          >
+            <CircleUser strokeWidth={3} className="w-5 h-10 mr-2" /> Dashboard
+          </NavLink>
+          <NavLink
+            to={routePath.userManagement}
+            className={({ isActive }) =>
+              (isActive ? "bg-primary " : "") +
+              `w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75 `
+            }
+          >
+            <CircleUser strokeWidth={3} className="w-5 h-10 mr-2" /> User
+            Management
+          </NavLink>
+
+          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+            <UsersRound strokeWidth={3} className="w-5 h-10 mr-2" />
             Guest Management
           </li>
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <ClipboardPen className="w-5 h-10 mr-2" />
+          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+            <ClipboardPen strokeWidth={3} className="w-5 h-10 mr-2" />
             Content Management
           </li>
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <HandCoins className="w-5 h-10 mr-2" /> Point Management
-          </li>
-          <ul className="mt-10">
-            <li>Earn Point</li>
-            <li>Burn Point</li>
-          </ul>
 
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <TicketCheck className="w-5 h-10 mr-2" />
+          <Accordion type="single" collapsible>
+            <AccordionItem className="border-none" value="item-1">
+              <AccordionTrigger className="w-full h-10 font-medium p-6 flex   hover:no-underline items-center text-center hover:bg-primary rounded  duration-75">
+                <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" /> Point
+                Management
+              </AccordionTrigger>
+              <AccordionContent>
+                <ul className="bg-primary/20 rounded-md" >
+                  <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+                    <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
+                    Coupon Management
+                  </li>
+                  <li className="w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75">
+                    <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
+                    Coupon Management
+                  </li>
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+
+          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+            <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
             Coupon Management
           </li>
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <LocateFixed className="w-5 h-10 mr-1" />
+          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+            <LocateFixed strokeWidth={3} className="w-5 h-10 mr-1" />
             Location Management
           </li>
-          <li className="w-full h-10 font-bold p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
-            <MessageCircleHeart className="w-5 h-10 mr-2" />
+          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+            <MessageCircleHeart strokeWidth={3} className="w-5 h-10 mr-2" />
             Feedback Mnagement
           </li>
         </ul>
         <ul className="w-4/5 mt-40">
-          <li className="w-full h-10 font-medium p-6 flex  items-center justify-center hover:bg-[#FFD700] rounded  duration-75">
+          <li className="w-full h-10 font-medium p-6 flex  items-center justify-center hover:bg-primary rounded  duration-75">
             <FileBarChart strokeWidth={3} className="w-5 h-10 mr-2" />
             Reports
           </li>
-          <li className="w-full h-10 font-medium p-6 flex  items-center justify-center *: hover:bg-[#FFD700] rounded duration-75 ">
+          <li className="w-full h-10 font-medium p-6 flex  items-center justify-center *: hover:bg-primary rounded duration-75 ">
             <Wrench strokeWidth={3} className="w-5 h-10 mr-2" />
             Settings
           </li>

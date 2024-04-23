@@ -44,7 +44,7 @@ const Routes = () => {
           element: <DashBoardPage />,
         },
         {
-          path:routePath.userManagement,
+          path: routePath.userManagement,
           element: <UserManagementPage />,
         },
       ],
