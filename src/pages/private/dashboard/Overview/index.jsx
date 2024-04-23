@@ -21,7 +21,7 @@ import {
 } from "recharts";
 export function Overview() {
   return (
-    <Card className="col-span-4">
+    <Card className=" flex-1">
       <CardHeader>
         <CardTitle>Overview</CardTitle>
       </CardHeader>
