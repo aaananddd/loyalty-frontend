@@ -16,9 +16,9 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="w-[21%] min-h-screen border-r-2 bg-white items-center">
-      <div className="w-full flex  flex-col items-center">
-        <ul className="w-[81%] text-black flex flex-col min-h-min pt-10 ">
+    <div className=" min-h-screen border-r-2 bg-white items-center">
+      <div className="w-[18vw] flex  flex-col items-center">
+        <ul className="px-4 text-black flex flex-col min-h-min pt-10 ">
           <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-[#FFD700] rounded  duration-75">
             <Home strokeWidth={3} className=" w-5 mr-2 " /> Dashboard
           </li>
