@@ -16,7 +16,7 @@ const RootLayout = () => {
         <div className="flex">
           {token && <Sidebar />}
           <Suspense fallback={<PageLoader />}>
-            <div className="flex-1 p-4 md:px-10 lg:px-20 md:py-8">
+            <div className="flex-1">
               <Outlet />
             </div>
           </Suspense>
