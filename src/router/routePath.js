@@ -1,6 +1,13 @@
 export default {
-  dashboard: "/",
+  dashboard: "/dashboard",
   login: "/login",
   about: "/about",
-  userManagement:"/user-management"
+  usermanagement: "/user-management",
+  guestmanagement: "/gust-management",
+  contentmanagement: "/content-management",
+  earnpoint: "/earn-point",
+  burnpoint: "/burn-point",
+  couponmanagement:"/ coupon-management",
+  locationmanagement:"/location-management",
+  feedbackmanagement:"/feedback-management"
 };
