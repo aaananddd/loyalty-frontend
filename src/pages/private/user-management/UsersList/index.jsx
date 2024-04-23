@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { users } from "@/utils/constants";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import ManageUserModal from "../ManageUserModal";
 const UsersList = () => {
   function UserCard({ name, email, phoneNumber }) {
     return (
@@ -18,7 +19,7 @@ const UsersList = () => {
           </div>
         </div>
         <div className="space-x-4">
-          <Button className="bg-yellow-500 ">Edit</Button>
+          <ManageUserModal />
           <Button className="bg-red-500">Remove</Button>
         </div>
       </Card>
