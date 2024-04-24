@@ -11,7 +11,7 @@ const UserManagementPage = () => {
           <CreateUserDialog />
         </div>
       </div>
-      <div className="px-4 my-4 space-y-2">
+      <div className="px-4 my-4 space-y-2 mb-24">
         <UsersList />
       </div>
     </div>

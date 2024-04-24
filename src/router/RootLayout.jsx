@@ -18,10 +18,10 @@ const RootLayout = () => {
           <Suspense fallback={<PageLoader />}>
             <div className="flex-1">
               <Outlet />
+        <Footer />
             </div>
           </Suspense>
         </div>
-        <Footer />
       </main>
       <Toaster richColors />
     </>
