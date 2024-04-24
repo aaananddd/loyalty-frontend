@@ -11,7 +11,9 @@ const ManageUserModal = () => {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button className="bg-gray-400 text-white">Manage</Button>
+        <Button className="bg-gray-500 hover:bg-gray-600 text-white">
+          Manage
+        </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
