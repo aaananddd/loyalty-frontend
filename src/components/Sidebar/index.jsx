@@ -22,9 +22,9 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className=" min-h-screen border-r-2 bg-white items-center">
-      <div className="w-[18vw] flex  flex-col items-center">
-        <ul className="px-4 text-black flex flex-col min-h-min pt-10 gap-y-1 ">
+    <div className=" min-h-screen border-r-2 bg-white   ">
+      <div className="w-[18vw] flex  flex-col items-center sticky top-32  ">
+        <ul className="px-4 text-black flex flex-col min-h-min  gap-y-1 ">
           <NavLink
             to={routePath.dashboard}
             className={({ isActive }) =>
@@ -32,7 +32,7 @@ const Sidebar = () => {
               `w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75 `
             }
           >
-            <CircleUser strokeWidth={3} className="w-5 h-10 mr-2" /> Dashboard
+            <Home strokeWidth={3} className="w-5 h-10 mr-2" /> Dashboard
           </NavLink>
           <NavLink
             to={routePath.userManagement}
@@ -45,50 +45,65 @@ const Sidebar = () => {
             Management
           </NavLink>
 
-          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+          <NavLink 
+            to={routePath.gustManagement}
+          className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
             <UsersRound strokeWidth={3} className="w-5 h-10 mr-2" />
             Guest Management
-          </li>
-          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+          </NavLink>
+
+          <NavLink
+            to={routePath.contentManagement}
+           className={({ isActive})=>(isActive ? "bg-primary":"")+
+           
+           "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
             <ClipboardPen strokeWidth={3} className="w-5 h-10 mr-2" />
             Content Management
-          </li>
+          </NavLink>
 
           <Accordion type="single" collapsible>
             <AccordionItem className="border-none" value="item-1">
               <AccordionTrigger className="w-full h-10 font-medium p-6 flex   hover:no-underline items-center text-center hover:bg-primary rounded  duration-75">
-                <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" /> Point
+               <div> <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" /></div> Point
                 Management
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="bg-primary/20 rounded-md" >
-                  <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
-                    <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
-                    Coupon Management
-                  </li>
-                  <li className="w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75">
-                    <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
-                    Coupon Management
-                  </li>
+                  <NavLink
+                  to={routePath.earnPoint}
+                   className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
+                  Earn Point
+                  </NavLink>
+                  <NavLink
+                  to={routePath.burnPoint}
+                   className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75"}>
+                    Burn Point
+                  </NavLink>
                 </ul>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+          <NavLink 
+          to={routePath.couponManagement}
+          className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
             <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
             Coupon Management
-          </li>
-          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+          </NavLink>
+          <NavLink 
+            to={routePath.locationManagement}
+           className= {({ isActive})=>(isActive? "bg-primary":"" )+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
             <LocateFixed strokeWidth={3} className="w-5 h-10 mr-1" />
             Location Management
-          </li>
-          <li className="w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75">
+          </NavLink>
+          <NavLink
+          to={routePath.feedbackManagement}
+           className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
             <MessageCircleHeart strokeWidth={3} className="w-5 h-10 mr-2" />
             Feedback Mnagement
-          </li>
+          </NavLink>
         </ul>
-        <ul className="w-4/5 mt-40">
+        {/* <ul className="w-4/5 mt-40">
           <li className="w-full h-10 font-medium p-6 flex  items-center justify-center hover:bg-primary rounded  duration-75">
             <FileBarChart strokeWidth={3} className="w-5 h-10 mr-2" />
             Reports
@@ -97,7 +112,7 @@ const Sidebar = () => {
             <Wrench strokeWidth={3} className="w-5 h-10 mr-2" />
             Settings
           </li>
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
