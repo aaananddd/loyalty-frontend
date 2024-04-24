@@ -3,7 +3,7 @@ export default {
   login: "/login",
   about: "/about",
   userManagement:"/user-management",
-  gustManagement:"/gust-management",
+  guestManagement:"/guest-management",
   earnPoint:"/earn-point",
   burnPoint:"/burn-point",
   locationManagement:"/location-management",

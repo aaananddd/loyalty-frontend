@@ -15,7 +15,9 @@ const DashBoardPage = lazy(() => import("@/pages/private/dashboard"));
 const UserManagementPage = lazy(() =>
   import("@/pages/private/user-management")
 );
-
+const GuestManagementPage = lazy(() =>
+  import("@/pages/private/guest-management")
+);
 /* Private Page Imports */
 const Routes = () => {
   const { token } = useAuth();
@@ -46,6 +48,10 @@ const Routes = () => {
         {
           path: routePath.userManagement,
           element: <UserManagementPage />,
+        },
+        {
+          path: routePath.guestManagement,
+          element: <GuestManagementPage />,
         },
       ],
     },

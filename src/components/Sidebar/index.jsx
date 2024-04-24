@@ -45,18 +45,24 @@ const Sidebar = () => {
             Management
           </NavLink>
 
-          <NavLink 
-            to={routePath.gustManagement}
-          className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
+          <NavLink
+            to={routePath.guestManagement}
+            className={({ isActive }) =>
+              (isActive ? "bg-primary" : "") +
+              "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
+            }
+          >
             <UsersRound strokeWidth={3} className="w-5 h-10 mr-2" />
             Guest Management
           </NavLink>
 
           <NavLink
             to={routePath.contentManagement}
-           className={({ isActive})=>(isActive ? "bg-primary":"")+
-           
-           "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
+            className={({ isActive }) =>
+              (isActive ? "bg-primary" : "") +
+              "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
+            }
+          >
             <ClipboardPen strokeWidth={3} className="w-5 h-10 mr-2" />
             Content Management
           </NavLink>
@@ -64,19 +70,30 @@ const Sidebar = () => {
           <Accordion type="single" collapsible>
             <AccordionItem className="border-none" value="item-1">
               <AccordionTrigger className="w-full h-10 font-medium p-6 flex   hover:no-underline items-center text-center hover:bg-primary rounded  duration-75">
-               <div> <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" /></div> Point
-                Management
+                <div>
+                  {" "}
+                  <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" />
+                </div>{" "}
+                Point Management
               </AccordionTrigger>
               <AccordionContent>
-                <ul className="bg-primary/20 rounded-md" >
+                <ul className="bg-primary/20 rounded-md">
                   <NavLink
-                  to={routePath.earnPoint}
-                   className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
-                  Earn Point
+                    to={routePath.earnPoint}
+                    className={({ isActive }) =>
+                      (isActive ? "bg-primary" : "") +
+                      "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
+                    }
+                  >
+                    Earn Point
                   </NavLink>
                   <NavLink
-                  to={routePath.burnPoint}
-                   className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75"}>
+                    to={routePath.burnPoint}
+                    className={({ isActive }) =>
+                      (isActive ? "bg-primary" : "") +
+                      "w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75"
+                    }
+                  >
                     Burn Point
                   </NavLink>
                 </ul>
@@ -84,21 +101,33 @@ const Sidebar = () => {
             </AccordionItem>
           </Accordion>
 
-          <NavLink 
-          to={routePath.couponManagement}
-          className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
+          <NavLink
+            to={routePath.couponManagement}
+            className={({ isActive }) =>
+              (isActive ? "bg-primary" : "") +
+              "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
+            }
+          >
             <TicketCheck strokeWidth={3} className="w-5 h-10 mr-2" />
             Coupon Management
           </NavLink>
-          <NavLink 
+          <NavLink
             to={routePath.locationManagement}
-           className= {({ isActive})=>(isActive? "bg-primary":"" )+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
+            className={({ isActive }) =>
+              (isActive ? "bg-primary" : "") +
+              "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
+            }
+          >
             <LocateFixed strokeWidth={3} className="w-5 h-10 mr-1" />
             Location Management
           </NavLink>
           <NavLink
-          to={routePath.feedbackManagement}
-           className= {({ isActive})=>(isActive ? "bg-primary":"")+"w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"}>
+            to={routePath.feedbackManagement}
+            className={({ isActive }) =>
+              (isActive ? "bg-primary" : "") +
+              "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
+            }
+          >
             <MessageCircleHeart strokeWidth={3} className="w-5 h-10 mr-2" />
             Feedback Mnagement
           </NavLink>
