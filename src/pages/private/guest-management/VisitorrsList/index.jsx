@@ -15,10 +15,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 import ManageGuestModal from "../ManageGuestModal";
-
 
 const data = [
   {
@@ -102,36 +101,58 @@ const VisitorsList = () => {
         <ScrollArea className="h-[62vh] w-full rounded-md border p-4 overflow-y-auto">
           <Table>
             <TableCaption></TableCaption>
-            <TableHeader className=''>
+            <TableHeader className="">
               <TableRow>
                 <TableHead className="text-black font-bold">ID</TableHead>
-                <TableHead className="text-black font-bold">Guest Name</TableHead>
+                <TableHead className="text-black font-bold">
+                  Guest Name
+                </TableHead>
                 <TableHead className="text-black font-bold">Address</TableHead>
-                <TableHead className="text-black font-bold">Contact Number</TableHead>
+                <TableHead className="text-black font-bold">
+                  Contact Number
+                </TableHead>
                 <TableHead className="text-black font-bold">Check In</TableHead>
-                <TableHead className="text-black font-bold">Check Out</TableHead>
-                <TableHead className="text-right text-black font-bold">Amount</TableHead>
-                <TableHead className="text-center text-black font-bold">Actions</TableHead>
+                <TableHead className="text-black font-bold">
+                  Check Out
+                </TableHead>
+                <TableHead className="text-right text-black font-bold">
+                  Amount
+                </TableHead>
+                <TableHead className="text-center text-black font-bold">
+                  Actions
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              {data.map((row) => (
-                <TableRow key={row.id}>
-                  <TableCell>{row.id}</TableCell>
-                  <TableCell>{row.guestName}</TableCell>
-                  <TableCell>{row.address}</TableCell>
-                  <TableCell>{row.phoneNumber}</TableCell>
-                  <TableCell>{row.checkIn}</TableCell>
-                  <TableCell>{row.checkOut}</TableCell>
-                  <TableCell className="text-right">
-                    ${row.amount.toFixed(2)}
-                  </TableCell>
-                  <TableCell className="text-center">
-                    <ManageGuestModal />
-                    <Button className="bg-red-500 ml-2 hover:bg-red-600 text-white">History</Button>
-                  </TableCell>
-                </TableRow>
-              ))}
+              {data.map(
+                ({
+                  id,
+                  guestName,
+                  address,
+                  phoneNumber,
+                  checkIn,
+                  checkOut,
+                  amount,
+                }) => (
+                  <TableRow key={id}>
+                    <TableCell>{id}</TableCell>
+                    <TableCell>{guestName}</TableCell>
+                    <TableCell>{address}</TableCell>
+                    <TableCell>{phoneNumber}</TableCell>
+                    <TableCell>{checkIn}</TableCell>
+                    <TableCell>{checkOut}</TableCell>
+                    <TableCell className="text-right">
+                      ${amount.toFixed(2)}
+                    </TableCell>
+                    <TableCell className="text-center">
+                      <ManageGuestModal />
+                      <Button className="bg-red-500 ml-2 hover:bg-red-600 text-white">
+                        History
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                )
+              )}
             </TableBody>
           </Table>
         </ScrollArea>
