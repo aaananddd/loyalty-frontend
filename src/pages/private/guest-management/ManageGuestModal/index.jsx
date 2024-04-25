@@ -13,7 +13,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import VisitorsList from "../VisitorrsList";
 
-const ManageGuestModal = ({ guestName, id }) => {
+const ManageGuestModal = ({ id,
+  guestName,
+  address,
+  phoneNumber,
+  checkIn,
+  checkOut,
+  amount,}) => {
   return (
     <Dialog className="">
       <DialogTrigger>
@@ -24,11 +30,35 @@ const ManageGuestModal = ({ guestName, id }) => {
       <DialogContent>
         <DialogHeader>
           <CardTitle className="flex justify-center">
-            Manage Guest Details {guestName}
+            Manage Details Of {guestName}
           </CardTitle>
           <CardDescription className="flex justify-center">
             Conveniently edit guest details for improved accuracy.
           </CardDescription>
+          <div className="grid gap-2 items-center space-y-2">
+            <div className="flex flex-col ">
+              <Label className="mb-3" htmlFor="email">
+                Guest ID 
+              </Label>
+              <Input id="id" type="text" value={id} />
+            </div>
+            <div className="flex flex-col">
+              <Label className="mb-3" htmlFor="password">
+                GUEST NAME
+              </Label>
+              <Input id="name" type="text"  value={guestName} />
+            </div>
+            <div className="flex flex-col">
+              <Label className="mb-3" htmlFor="confirmPassword">
+                ADDRESS
+              </Label>
+              <Input id="address" type="text" value={address}/>
+              <Label className="mb-3" htmlFor="confirmPassword">
+                PHONE NUMBER
+              </Label>
+              <Input id="name" type="text"  value={phoneNumber} />
+            </div>
+          </div>
         </DialogHeader>
 
         <DialogFooter className="flex justify-center">
