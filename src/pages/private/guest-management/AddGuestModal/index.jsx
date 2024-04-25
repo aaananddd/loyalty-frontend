@@ -45,7 +45,7 @@ const AddGuestDialog = () => {
           </div>
         </div>
         <DialogFooter className="flex justify-center">
-          <Button className="bg-yellow-500 text-zinc-950 hover:bg-yellow-600">
+          <Button className="bg-green-500 text-zinc-950 hover:bg-green-600">
             Add Guest
           </Button>
         </DialogFooter>

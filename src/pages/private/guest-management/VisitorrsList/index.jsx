@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from "@/components/ui/button";
+import ManageGuestModal from "../ManageGuestModal";
 
 
 const data = [
@@ -126,8 +127,8 @@ const VisitorsList = () => {
                     ${row.amount.toFixed(2)}
                   </TableCell>
                   <TableCell className="text-center">
-                    <Button className="bg-gray-500 mr-5 hover:bg-gray-600">Manage</Button>
-                    <Button className="bg-red-400 hover:bg-red-600">History</Button>
+                    <ManageGuestModal />
+                    <Button className="bg-red-500 ml-2 hover:bg-red-600 text-white">History</Button>
                   </TableCell>
                 </TableRow>
               ))}

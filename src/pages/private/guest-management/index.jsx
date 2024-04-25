@@ -14,7 +14,7 @@ const GuestManagementPage = () => {
       </div>
       <div className="px-4 my-4 space-y-2 mb-24">
         <VisitorsList />
-        <DeactivateGuestDialog />
+        {/* <DeactivateGuestDialog /> */}
       </div>
     </div>
   );
