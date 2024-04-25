@@ -98,14 +98,15 @@ const VisitorsList = () => {
         <Table>
           <TableCaption></TableCaption>
           <TableHeader>
-            <TableRow className=''>
-              <TableHead className='text-black font-bold'>ID</TableHead>
-              <TableHead className='text-black font-bold'>Guest Name</TableHead>
-              <TableHead className='text-black font-bold'>Address</TableHead>
-              <TableHead className='text-black font-bold'>Contact Number</TableHead>
-              <TableHead className='text-black font-bold'>Check In</TableHead>
-              <TableHead className='text-black font-bold'>Check Out</TableHead>
-              <TableHead className="text-right text-black font-bold">Amount</TableHead>
+            <TableRow className="">
+              <TableHead className="text-black font-bold">ID</TableHead>
+              <TableHead className="text-black font-bold">Guest Name</TableHead>
+              <TableHead className="text-black font-bold">Address</TableHead>
+              <TableHead className="text-black font-bold">Contact Number</TableHead>
+              <TableHead className="text-black font-bold">Check In</TableHead>
+              <TableHead className="text-black font-bold">Check Out</TableHead>
+              <TableHead className=" text-black font-bold">Amount</TableHead>
+              <TableHead className="text-center text-black font-bold">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -117,8 +118,12 @@ const VisitorsList = () => {
                 <TableCell>{row.phoneNumber}</TableCell>
                 <TableCell>{row.checkIn}</TableCell>
                 <TableCell>{row.checkOut}</TableCell>
-                <TableCell className="text-right">
+                <TableCell className="">
                   ${row.amount.toFixed(2)}
+                </TableCell>
+                <TableCell className="text-center">
+                  <button>Edit</button>
+                  <button>Delete</button>
                 </TableCell>
               </TableRow>
             ))}
