@@ -16,6 +16,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from "@/components/ui/button";
 
 
 const data = [
@@ -95,7 +96,7 @@ const data = [
 
 const VisitorsList = () => {
   return (
-    <div className="min-h-screen">
+    <div className="">
       <Card>
         <ScrollArea className="h-[62vh] w-full rounded-md border p-4 overflow-y-auto">
           <Table>
@@ -125,8 +126,8 @@ const VisitorsList = () => {
                     ${row.amount.toFixed(2)}
                   </TableCell>
                   <TableCell className="text-center">
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <Button className="bg-gray-500 mr-5 hover:bg-gray-600">Manage</Button>
+                    <Button className="bg-red-400 hover:bg-red-600">History</Button>
                   </TableCell>
                 </TableRow>
               ))}
