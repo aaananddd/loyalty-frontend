@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import VisitorsList from "../VisitorrsList";
 
-const ManageGuestModal = () => {
+const ManageGuestModal = ({ guestName, id }) => {
   return (
     <Dialog className="">
       <DialogTrigger>
@@ -24,7 +24,7 @@ const ManageGuestModal = () => {
       <DialogContent>
         <DialogHeader>
           <CardTitle className="flex justify-center">
-            Manage Guest Details
+            Manage Guest Details {guestName}
           </CardTitle>
           <CardDescription className="flex justify-center">
             Conveniently edit guest details for improved accuracy.

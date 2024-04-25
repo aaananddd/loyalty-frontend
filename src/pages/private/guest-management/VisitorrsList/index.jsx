@@ -145,7 +145,7 @@ const VisitorsList = () => {
                       ${amount.toFixed(2)}
                     </TableCell>
                     <TableCell className="text-center">
-                      <ManageGuestModal />
+                      <ManageGuestModal id={id} guestName={guestName} />
                       <Button className="bg-red-500 ml-2 hover:bg-red-600 text-white">
                         History
                       </Button>
