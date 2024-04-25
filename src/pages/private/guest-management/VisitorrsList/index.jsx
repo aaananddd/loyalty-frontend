@@ -15,6 +15,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area"
+
 
 const data = [
   {
@@ -95,40 +97,42 @@ const VisitorsList = () => {
   return (
     <div className="min-h-screen">
       <Card>
-        <Table>
-          <TableCaption></TableCaption>
-          <TableHeader>
-            <TableRow className="">
-              <TableHead className="text-black font-bold">ID</TableHead>
-              <TableHead className="text-black font-bold">Guest Name</TableHead>
-              <TableHead className="text-black font-bold">Address</TableHead>
-              <TableHead className="text-black font-bold">Contact Number</TableHead>
-              <TableHead className="text-black font-bold">Check In</TableHead>
-              <TableHead className="text-black font-bold">Check Out</TableHead>
-              <TableHead className=" text-black font-bold">Amount</TableHead>
-              <TableHead className="text-center text-black font-bold">Actions</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {data.map((row) => (
-              <TableRow key={row.id}>
-                <TableCell>{row.id}</TableCell>
-                <TableCell>{row.guestName}</TableCell>
-                <TableCell>{row.address}</TableCell>
-                <TableCell>{row.phoneNumber}</TableCell>
-                <TableCell>{row.checkIn}</TableCell>
-                <TableCell>{row.checkOut}</TableCell>
-                <TableCell className="">
-                  ${row.amount.toFixed(2)}
-                </TableCell>
-                <TableCell className="text-center">
-                  <button>Edit</button>
-                  <button>Delete</button>
-                </TableCell>
+        <ScrollArea className="h-[62vh] w-full rounded-md border p-4 overflow-y-auto">
+          <Table>
+            <TableCaption></TableCaption>
+            <TableHeader className=''>
+              <TableRow>
+                <TableHead className="text-black font-bold">ID</TableHead>
+                <TableHead className="text-black font-bold">Guest Name</TableHead>
+                <TableHead className="text-black font-bold">Address</TableHead>
+                <TableHead className="text-black font-bold">Contact Number</TableHead>
+                <TableHead className="text-black font-bold">Check In</TableHead>
+                <TableHead className="text-black font-bold">Check Out</TableHead>
+                <TableHead className="text-right text-black font-bold">Amount</TableHead>
+                <TableHead className="text-center text-black font-bold">Actions</TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              {data.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell>{row.id}</TableCell>
+                  <TableCell>{row.guestName}</TableCell>
+                  <TableCell>{row.address}</TableCell>
+                  <TableCell>{row.phoneNumber}</TableCell>
+                  <TableCell>{row.checkIn}</TableCell>
+                  <TableCell>{row.checkOut}</TableCell>
+                  <TableCell className="text-right">
+                    ${row.amount.toFixed(2)}
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <button>Edit</button>
+                    <button>Delete</button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </ScrollArea>
       </Card>
     </div>
   );
