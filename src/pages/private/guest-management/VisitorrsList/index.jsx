@@ -15,6 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const data = [
   {
@@ -122,8 +123,8 @@ const VisitorsList = () => {
                   ${row.amount.toFixed(2)}
                 </TableCell>
                 <TableCell className="text-center">
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <Button className="bg-gray-500 text-white mr-5 px-7 hover:bg-gray-600 ">Edit</Button>
+                  <Button className="bg-red-500 text-white hover:bg-red-600">History</Button>
                 </TableCell>
               </TableRow>
             ))}
