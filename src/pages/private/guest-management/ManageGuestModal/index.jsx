@@ -51,25 +51,25 @@ const ManageGuestModal = ({
               </Label>
               <Input id="name" type="text" value={guestName} />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col ">
               <Label className="mb-3" htmlFor="address">
                 ADDRESS
               </Label>
               <Input id="address" type="text" value={address} />
-              <Label className="mb-3" htmlFor="phonenumber">
+              <Label className="mb-3 mt-3" htmlFor="phonenumber">
                 PHONE NUMBER
               </Label>
               <Input id="phoneNumber" type="text" value={phoneNumber} />
             </div>
-            <div className="flex flex-row">
-              <Label className="mb-3" htmlFor="checkIn">
+            <div className="flex w-full items-center justify-center text-center">
+              <Label className="mb-3 w-20 mr-2" htmlFor="checkIn">
                 CHECK IN
               </Label>
-              <Input id="checkIn" type="text" value={checkIn} />
-              <Label className="mb-3" htmlFor="CheckOut">
+              <Input id="checkIn" type="text" value={checkIn} className="w-32 mr-5" />
+              <Label className="mb-3 w-20 mr-5" htmlFor="CheckOut">
                 CHECK OUT
               </Label>
-              <Input id="checkOut" type="text" value={checkOut} />
+              <Input id="checkOut" type="text" value={checkOut} className="w-32" />
             </div>
             <div className="flex flex-col ">
               <Label className="mb-3" htmlFor="amount">

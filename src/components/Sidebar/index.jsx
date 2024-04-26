@@ -47,12 +47,7 @@ const Sidebar = () => {
 
           <NavLink
             to={routePath.guestManagement}
-<<<<<<< HEAD
             className={({ isActive }) => (isActive ? "bg-primary " : "") +
-=======
-            className={({ isActive }) =>
-              (isActive ? "bg-primary " : "") +
->>>>>>> e3d74a43b5d1f20df88806d760df9e92a32c9b5a
               "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
             }
           >

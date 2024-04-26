@@ -108,7 +108,7 @@ const VisitorsList = () => {
                   Guest Name
                 </TableHead>
                 <TableHead className="text-black font-bold">Address</TableHead>
-                <TableHead className="text-black font-bold">
+                <TableHead className="text-black font-bold ">
                   Contact Number
                 </TableHead>
                 <TableHead className="text-black font-bold">Check In</TableHead>

@@ -57,3 +57,6 @@
     @apply bg-background text-foreground;
   }
 }
+.data-\[state\=checked\]\:bg-primary[data-state=checked] {
+  background-color: gray;
+}
