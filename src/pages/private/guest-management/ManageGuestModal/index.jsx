@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,7 +15,8 @@ import { Label } from "@/components/ui/label";
 import VisitorsList from "../VisitorrsList";
 import DeactivateGuest from "../DeactivateSwitch";
 import { useState } from "react";
-
+import { CheckInDatePicker } from "../CheckInDatePicker";
+import { CheckOutDatePicker } from "../CheckOutDatePicker";
 
 const ManageGuestModal = ({
   id,
@@ -28,9 +30,8 @@ const ManageGuestModal = ({
   const [isOpen, setIsOpen] = useState(false);
   const handleClose = () => {
     setIsOpen(false);
-    console.log("Cancel button clicked"); // Add console log here
   };
- 
+
   return (
     <Dialog className="" open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
@@ -70,14 +71,8 @@ const ManageGuestModal = ({
               <Input id="phoneNumber" type="text" value={phoneNumber} />
             </div>
             <div className="flex w-full items-center justify-center text-center">
-              <Label className=" w-20 mr-2" htmlFor="checkIn">
-                CHECK IN
-              </Label>
-              <Input id="checkIn" type="text" value={checkIn} className="w-32 mr-5" />
-              <Label className=" w-20 mr-5" htmlFor="CheckOut">
-                CHECK OUT
-              </Label>
-              <Input id="checkOut" type="text" value={checkOut} className="w-32" />
+              <CheckInDatePicker />
+              <CheckOutDatePicker />
             </div>
             <div className="flex flex-col ">
               <Label className="mb-3" htmlFor="amount">

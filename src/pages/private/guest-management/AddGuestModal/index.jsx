@@ -9,11 +9,15 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import React from "react";
+import React, { useState } from "react";
 
 const AddGuestDialog = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
         <Button>Add Guest</Button>
       </DialogTrigger>
@@ -45,7 +49,10 @@ const AddGuestDialog = () => {
           </div>
         </div>
         <DialogFooter className="flex justify-center">
-          <Button className="bg-green-500 text-zinc-950 hover:bg-green-600">
+          <Button  onClick={handleClose} className="bg-red-500 text-white hover:bg-red-600">
+            Cancel
+          </Button>
+          <Button className="bg-green-500 text-white hover:bg-green-600">
             Add Guest
           </Button>
         </DialogFooter>
