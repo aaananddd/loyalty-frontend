@@ -13,6 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import VisitorsList from "../VisitorrsList";
 import DeactivateGuest from "../DeactivateSwitch";
+import { useState } from "react";
+
 
 const ManageGuestModal = ({
   id,
@@ -23,8 +25,14 @@ const ManageGuestModal = ({
   checkOut,
   amount,
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => {
+    setIsOpen(false);
+    console.log("Cancel button clicked"); // Add console log here
+  };
+ 
   return (
-    <Dialog className="">
+    <Dialog className="" open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
         <Button className="bg-gray-500 hover:bg-gray-600 text-white">
           Manage
@@ -84,6 +92,12 @@ const ManageGuestModal = ({
         </DialogHeader>
 
         <DialogFooter className="flex justify-center">
+          <Button
+            onClick={handleClose}
+            className="bg-red-500 text-white hover:bg-red-600"
+          >
+            Cancel
+          </Button>
           <Button className="bg-green-500 text-white hover:bg-green-600">
             Save Changes
           </Button>
