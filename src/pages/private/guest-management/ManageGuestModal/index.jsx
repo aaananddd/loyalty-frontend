@@ -62,11 +62,11 @@ const ManageGuestModal = ({
               <Input id="phoneNumber" type="text" value={phoneNumber} />
             </div>
             <div className="flex w-full items-center justify-center text-center">
-              <Label className="mb-3 w-20 mr-2" htmlFor="checkIn">
+              <Label className=" w-20 mr-2" htmlFor="checkIn">
                 CHECK IN
               </Label>
               <Input id="checkIn" type="text" value={checkIn} className="w-32 mr-5" />
-              <Label className="mb-3 w-20 mr-5" htmlFor="CheckOut">
+              <Label className=" w-20 mr-5" htmlFor="CheckOut">
                 CHECK OUT
               </Label>
               <Input id="checkOut" type="text" value={checkOut} className="w-32" />
