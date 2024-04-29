@@ -72,13 +72,13 @@ const ManageGuestModal = ({
             </div>
             <div className="flex w-full">
             <div className="flex flex-col w-1/2 items-center justify-center text-center ">
-            <label htmlFor="CheckIn" className="w-full text-left pl-3">CheckIn</label>
+            <Label htmlFor="CheckIn" className="w-full text-left pl-1 mb-2 ">CHECK IN</Label>
               <CheckInDatePicker/>
              
             </div>
             <div className="flex flex-col w-1/2 items-center justify-center text-center">
            
-              <label htmlFor="checkout" className="w-full text-left pl-5">CheckOut</label>
+              <Label htmlFor="checkout" className="w-full text-left pl-5 mb-2 ">CHECK OUT</Label>
               <CheckOutDatePicker/>
             </div>
             </div>
