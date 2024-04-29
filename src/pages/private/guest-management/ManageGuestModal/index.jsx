@@ -71,7 +71,7 @@ const ManageGuestModal = ({
               <Input id="phoneNumber" type="text" value={phoneNumber} />
             </div>
             <div className="flex w-full items-center justify-center text-center">
-              <CheckInDatePicker />
+              <CheckInDatePicker  />
               <CheckOutDatePicker />
             </div>
             <div className="flex flex-col ">
