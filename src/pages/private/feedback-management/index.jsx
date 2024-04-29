@@ -1,4 +1,4 @@
-import UserFeedback from "./user-feedback";
+import UserFeedacks from "./user-feedback";
 const FeedbackManagementPage = () => {
   return (
     <div>
@@ -6,7 +6,7 @@ const FeedbackManagementPage = () => {
         <div className="flex justify-between p-8">
           <h1 className="font-semibold text-2xl  ">Recent User Feedbacks</h1>
           
-          <UserFeedback/>
+          <UserFeedacks />
         </div>
       </div>
       <div className="px-4 my-4 space-y-2 mb-24">
