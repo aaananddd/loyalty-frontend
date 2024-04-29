@@ -11,9 +11,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { TextareaDemo } from "./textarea";
+import { Textarea } from "@/components/ui/textarea";
 
-export function FeedbackSheet({ name, email }) {
+export function FeedbackSheet() {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -33,29 +33,19 @@ export function FeedbackSheet({ name, email }) {
             <Label htmlFor="name" className="text-right">
               Username
             </Label>
-            <Input id="name" value={name} className="col-span-3" />
+            <Input id="name" value="" className="col-span-3" />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="email" className="text-right">
               Email
             </Label>
-            <Input
-              id="email"
-              type="email"
-              value={email}
-              className="col-span-3"
-            />
+            <Input id="email" type="email" value="" className="col-span-3" />
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="feedback" className="text-right">
               Feedback
             </Label>
-            <Input
-              id="textarea"
-              type="textarea"
-              value={email}
-              className="col-span-3"
-            />
+            <Textarea />
           </div>
         </div>
         <SheetFooter>
@@ -64,7 +54,8 @@ export function FeedbackSheet({ name, email }) {
               <Label htmlFor="feedback" className="text-right">
                 Reply
               </Label>
-              <Input id="textarea" value={email} className="col-span-3" />
+              <Textarea />
+
               <Button type="submit">Submit</Button>
             </div>
           </SheetClose>
