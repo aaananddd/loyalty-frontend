@@ -9,11 +9,16 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import React from "react";
+import React, { useState } from "react";
 
 const CreateUserDialog = () => {
+  const [IsOpen, setIsOpen] = useState(false);
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Dialog>
+    <Dialog open={IsOpen} onOpenChange={setIsOpen}>
       <DialogTrigger>
         <Button>Create User</Button>
       </DialogTrigger>
@@ -45,7 +50,13 @@ const CreateUserDialog = () => {
           </div>
         </div>
         <DialogFooter className="flex justify-center">
-          <Button className="bg-yellow-500 text-zinc-950 hover:bg-yellow-600">
+          <Button
+            onClick={handleClose}
+            className="bg-red-500 text-white hover:bg-red-600"
+          >
+            Cancel
+          </Button>
+          <Button className="bg-green-500 text-white hover:bg-green-600">
             Create Account
           </Button>
         </DialogFooter>

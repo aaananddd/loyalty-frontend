@@ -24,8 +24,9 @@ const RemoveUserModal = () => {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction className="hover:bg-red-600 bg-red-400">Continue</AlertDialogAction>
+          <AlertDialogCancel className="bg-green-500 hover:bg-green-600">Cancel</AlertDialogCancel>
+          <AlertDialogAction className="hover:bg-red-600 bg-red-500">Continue
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
