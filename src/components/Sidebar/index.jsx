@@ -123,7 +123,7 @@ const Sidebar = () => {
           <NavLink
             to={routePath.feedbackManagement}
             className={({ isActive }) =>
-              (isActive ? "bg-primary" : "") +
+              (isActive ? "bg-primary " : "") +
               "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
             }
           >

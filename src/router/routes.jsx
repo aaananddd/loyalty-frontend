@@ -5,6 +5,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { useAuth } from "@/utils/provider/authProvider";
 import RootLayout from "./RootLayout";
 import ErrorPage from "@/pages/error-page";
+import FeedbackManagementPage from "@/pages/private/feedback-management";
 
 /* Auth Page Imports */
 const LoginPage = lazy(() => import("@/pages/auth/login"));
@@ -52,6 +53,10 @@ const Routes = () => {
         {
           path: routePath.guestManagement,
           element: <GuestManagementPage />,
+        },
+        {
+          path: routePath.feedbackManagement,
+          element: <FeedbackManagementPage />,
         },
       ],
     },
