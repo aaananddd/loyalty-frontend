@@ -29,36 +29,38 @@ export function FeedbackSheet() {
           </SheetDescription>
         </SheetHeader>
         <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
+          <div className="items-start gap-4 flex flex-col">
             <Label htmlFor="name" className="text-right">
               Username
             </Label>
             <Input id="name" value="" className="col-span-3" />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="email" className="text-right">
+          <div className="items-start gap-4 flex flex-col">
+            <Label htmlFor="email" className=" ">
               Email
             </Label>
             <Input id="email" type="email" value="" className="col-span-3" />
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="feedback" className="text-right">
+          <div className="items-start gap-4 flex flex-col ">
+            <Label htmlFor="feedback" className="">
               Feedback
             </Label>
-            <Textarea />
+            <Textarea className="w-full"/>
           </div>
         </div>
         <SheetFooter>
-          <SheetClose asChild>
-            <div className="grid grid-cols-4 items-center gap-4 ">
+          <div className="w-full">
+            <div className=" items-start  gap-4 flex flex-col">
               <Label htmlFor="feedback" className="text-right">
                 Reply
               </Label>
-              <Textarea />
+              <Textarea className="w-full"/>
 
-              <Button type="submit">Submit</Button>
+             
             </div>
-          </SheetClose>
+            <SheetClose className="mt-5"><Button type="submit">Submit</Button></SheetClose>
+            
+          </div>
         </SheetFooter>
       </SheetContent>
     </Sheet>
