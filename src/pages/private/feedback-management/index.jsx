@@ -3,8 +3,8 @@ const FeedbackManagementPage = () => {
   return (
     <div>
       <div>
-        <div className="flex justify-between p-8">
-          <h1 className="font-semibold text-2xl  ">Recent User Feedbacks</h1>
+        <div className="flex flex-col justify-between p-8 ">
+          <h1 className="font-semibold text-2xl mb-3 ">Recent User Feedbacks</h1>
           
           <UserFeedacks />
         </div>

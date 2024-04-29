@@ -2,11 +2,19 @@ import { Card } from "@/components/ui/card";
 import { users } from "@/utils/constants";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { FeedbackSheet } from "../feedback-sheet";
+import { Textarea } from "@/components/ui/textarea";
+import { TextareaDemo } from "../feedback-sheet/textarea";
 
 const UserFeedacks = () => {
   function UserCard({ name, email, phoneNumber }) {
+
+
+    
     return (
-      <Card className="flex justify-between items-center p-4">
+        
+      <Card className="flex  justify-between items-center p-4 mb-3">
         <div className="flex justify-center items-center gap-x-4">
           <Avatar className="size-16">
             <AvatarImage src="https://github.com/shadcn.png" />
@@ -19,7 +27,7 @@ const UserFeedacks = () => {
           </div>
         </div>
         <div className="space-x-4">
-        <Button className="bg-yellow-500 hover:bg-yellow-600 text-white">View</Button>
+        <FeedbackSheet />
         </div>
       </Card>
     );
