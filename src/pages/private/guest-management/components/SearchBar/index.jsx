@@ -1,8 +1,8 @@
 import { Search } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { handleKeyDown } from "@/utils/functions/ctrlKSearch";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { handleKeyDown } from "@/utils/functions/ctrlKSearch";
 
 const SearchBar = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -27,7 +27,7 @@ const SearchBar = () => {
 
   return (
     <form
-      className="flex items-center  justify-center  -z-20  relative lg:mr-4 w-96"
+      className="flex items-center  justify-center  -z-20  relative lg:mr-4 w-80 lg:w-96"
       onSubmit={handleSubmit}
     >
       <Input

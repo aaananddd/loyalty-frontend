@@ -4,14 +4,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { useAuth } from "@/utils/provider/authProvider";
 import RootLayout from "./RootLayout";
-import ErrorPage from "@/pages/error-page";
-import FeedbackManagementPage from "@/pages/private/feedback-management";
+import ErrorPage from "@/pages/error-page"; // any imports below should be imported lazyily
 
 /* Auth Page Imports */
 const LoginPage = lazy(() => import("@/pages/auth/login"));
 
 /* Public Page Imports */
 const AboutPage = lazy(() => import("@/pages/public/about"));
+
+/* Private Page Imports */
 const DashBoardPage = lazy(() => import("@/pages/private/dashboard"));
 const UserManagementPage = lazy(() =>
   import("@/pages/private/user-management")
@@ -19,7 +20,9 @@ const UserManagementPage = lazy(() =>
 const GuestManagementPage = lazy(() =>
   import("@/pages/private/guest-management")
 );
-/* Private Page Imports */
+const GuestPage = lazy(()=>import("@/pages/private/guest-management/guest"))
+
+const FeedbackManagementPage = lazy(()=>import("@/pages/private/feedback-management"))
 const Routes = () => {
   const { token } = useAuth();
 
@@ -52,7 +55,16 @@ const Routes = () => {
         },
         {
           path: routePath.guestManagement,
-          element: <GuestManagementPage />,
+          children: [
+            {
+              index: true,
+              element: <GuestManagementPage />,
+            },
+            {
+              path:":id",
+              element:<GuestPage/>
+            }
+          ],
         },
         {
           path: routePath.feedbackManagement,

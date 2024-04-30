@@ -22,9 +22,9 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className=" min-h-screen border-r-2 bg-white   ">
-      <div className="w-[18vw] flex  flex-col items-center sticky top-32  ">
-        <ul className="px-4 text-black flex flex-col min-h-min  gap-y-1 ">
+    <div className="  border-r-2 bg-white    ">
+      <div className=" flex  flex-col items-center sticky top-32  ">
+        <ul className="px-4 md:px-1  text-black flex flex-col min-h-min  gap-y-1 ">
           <NavLink
             to={routePath.dashboard}
             className={({ isActive }) =>
@@ -38,7 +38,7 @@ const Sidebar = () => {
             to={routePath.userManagement}
             className={({ isActive }) =>
               (isActive ? "bg-primary " : "") +
-              `w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75 `
+              `w-full h-10 font-medium  p-6 flex  items-center text-center hover:bg-primary rounded  duration-75 `
             }
           >
             <CircleUser strokeWidth={3} className="w-5 h-10 mr-2" /> User
@@ -47,7 +47,8 @@ const Sidebar = () => {
 
           <NavLink
             to={routePath.guestManagement}
-            className={({ isActive }) => (isActive ? "bg-primary " : "") +
+            className={({ isActive }) =>
+              (isActive ? "bg-primary " : "") +
               "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
             }
           >
@@ -70,9 +71,8 @@ const Sidebar = () => {
             <AccordionItem className="border-none" value="item-1">
               <AccordionTrigger className="w-full h-10 font-medium p-6 flex   hover:no-underline items-center text-center hover:bg-primary rounded  duration-75">
                 <div>
-                  {" "}
                   <HandCoins strokeWidth={3} className="w-5 h-10 mr-2" />
-                </div>{" "}
+                </div>
                 Point Management
               </AccordionTrigger>
               <AccordionContent>

@@ -18,7 +18,7 @@ const AddGuestDialog = () => {
   };
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button>Add Guest</Button>
       </DialogTrigger>
       <DialogContent>
@@ -49,7 +49,10 @@ const AddGuestDialog = () => {
           </div>
         </div>
         <DialogFooter className="flex justify-center">
-          <Button  onClick={handleClose} className="bg-red-500 text-white hover:bg-red-600">
+          <Button
+            onClick={handleClose}
+            className="bg-red-500 text-white hover:bg-red-600"
+          >
             Cancel
           </Button>
           <Button className="bg-green-500 text-white hover:bg-green-600">
