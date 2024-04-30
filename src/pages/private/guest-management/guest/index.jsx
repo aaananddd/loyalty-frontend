@@ -1,6 +1,6 @@
 
 const GuestPage = () => {
-  return <div>GuestPage</div>;
+  return <div className="bg-red-400">GuestPage</div>;
 };
 
 export default GuestPage;

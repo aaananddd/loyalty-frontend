@@ -22,7 +22,7 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className="  border-r-2 bg-white    ">
+    <div className="border-r-2">
       <div className=" flex  flex-col items-center sticky top-32  ">
         <ul className="px-4 md:px-1  text-black flex flex-col min-h-min  gap-y-1 ">
           <NavLink

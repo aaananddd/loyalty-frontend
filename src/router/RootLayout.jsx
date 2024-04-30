@@ -13,15 +13,16 @@ const RootLayout = () => {
     <>
       <main className="flex flex-col min-h-screen justify-between font-sans ">
         <Header />
-        <div className="flex">
-          {token && <Sidebar />}
-          <Suspense fallback={<PageLoader />}>
+        <Suspense fallback={<PageLoader />}>
+          <div className="flex bg-yello-400 flex-1 ">
+            {token && <Sidebar />}
             <div className="flex-1">
+
               <Outlet />
-        <Footer />
             </div>
-          </Suspense>
-        </div>
+          </div>
+        </Suspense>
+        <Footer />
       </main>
       <Toaster richColors />
     </>
