@@ -1,172 +1,45 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Card } from "@/components/ui/card";
+import { users } from "@/utils/constants";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import ManageGuestModal from "../ManageGuestModal";
+import DeactivateGuestModal from "../DeactivateGuestModal";
+import DeactivateGuest from "../DeactivateSwitch";
+import { loyalEmblem } from "@/utils/constants/assets";
 
-const data = [
-  {
-    id: 1,
-    guestName: "John Doe",
-    address: "123 Main Street",
-    phoneNumber: "(555) 123-4567",
-    checkIn: "2024-04-20",
-    checkOut: "2024-04-25",
-    amount: 250.0,
-  },
-  {
-    id: 2,
-    guestName: "Jane Smith",
-    address: "456 Elm Street",
-    phoneNumber: "(555) 987-6543",
-    checkIn: "2024-04-22",
-    checkOut: "2024-04-27",
-    amount: 150.0,
-  },
-  {
-    id: 3,
-    guestName: "Alice Johnson",
-    address: "789 Oak Avenue",
-    phoneNumber: "(555) 555-1234",
-    checkIn: "2024-04-18",
-    checkOut: "2024-04-23",
-    amount: 300.0,
-  },
-  {
-    id: 4,
-    guestName: "Bob Brown",
-    address: "321 Pine Road",
-    phoneNumber: "(555) 321-7890",
-    checkIn: "2024-04-25",
-    checkOut: "2024-04-30",
-    amount: 200.0,
-  },
-  {
-    id: 5,
-    guestName: "Eva Garcia",
-    address: "654 Cedar Lane",
-    phoneNumber: "(555) 789-0123",
-    checkIn: "2024-04-21",
-    checkOut: "2024-04-26",
-    amount: 350.0,
-  },
-  {
-    id: 6,
-    guestName: "Fedor Cernych",
-    address: "654 Cedar Lane",
-    phoneNumber: "(555) 789-0123",
-    checkIn: "2024-04-21",
-    checkOut: "2024-04-26",
-    amount: 350.0,
-  },
-  {
-    id: 7,
-    guestName: "Roy Krishna",
-    address: "654 Cedar Lane",
-    phoneNumber: "(555) 789-0123",
-    checkIn: "2024-04-21",
-    checkOut: "2024-04-26",
-    amount: 350.0,
-  },
-  {
-    id: 8,
-    guestName: "Nevil",
-    address: "654 Cedar Lane",
-    phoneNumber: "(555) 789-0123",
-    checkIn: "2024-04-21",
-    checkOut: "2024-04-26",
-    amount: 350.0,
-  },
-];
-
-const VisitorsList = () => {
-  return (
-    <div className="">
-      <Card>
-        <ScrollArea className="h-[62vh] w-full rounded-md border p-4 overflow-y-auto">
-          <Table>
-            <TableCaption></TableCaption>
-            <TableHeader className="">
-              <TableRow>
-                <TableHead className="text-black font-bold">ID</TableHead>
-                <TableHead className="text-black font-bold">
-                  Guest Name
-                </TableHead>
-                <TableHead className="text-black font-bold">Address</TableHead>
-                <TableHead className="text-black font-bold ">
-                  Contact Number
-                </TableHead>
-                <TableHead className="text-black font-bold">Check In</TableHead>
-                <TableHead className="text-black font-bold">
-                  Check Out
-                </TableHead>
-                <TableHead className="text-right text-black font-bold">
-                  Amount
-                </TableHead>
-                <TableHead className="text-center text-black font-bold">
-                  Actions
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {data.map(
-                ({
-                  id,
-                  guestName,
-                  address,
-                  phoneNumber,
-                  checkIn,
-                  checkOut,
-                  amount,
-                }) => (
-                  <TableRow key={id}>
-                    <TableCell>{id}</TableCell>
-                    <TableCell>{guestName}</TableCell>
-                    <TableCell>{address}</TableCell>
-                    <TableCell>{phoneNumber}</TableCell>
-                    <TableCell>{checkIn}</TableCell>
-                    <TableCell>{checkOut}</TableCell>
-                    <TableCell className="text-right">
-                      ${amount.toFixed(2)}
-                    </TableCell>
-                    <TableCell className="text-center">
-                      <ManageGuestModal
-                        id={id}
-                        guestName={guestName}
-                        address={address}
-                        phoneNumber={phoneNumber}
-                        checkIn={checkIn}
-                        checkOut={checkOut}
-                        amount={amount}
-                      />
-                      <Button className="bg-red-500 ml-2 hover:bg-red-600 text-white">
-                        History
-                      </Button>
-                    </TableCell>
-                  </TableRow>
-                )
-              )}
-            </TableBody>
-          </Table>
-        </ScrollArea>
+const Guests = () => {
+  function UserCard({ name, email, phoneNumber }) {
+    return (
+      <Card className="flex justify-between items-center p-4">
+        <div className="flex gap-x-4 justify-center items-center">
+          <div className="flex justify-center items-center gap-x-4">
+            <Avatar className="size-16">
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <div className=" w-42">
+              <h1 className="w-40 truncate">{name}</h1>
+              <p className="text-sm text-black/50">{email}</p>
+              <p className="text-sm text-black/50">Phone: {phoneNumber}</p>
+            </div>
+          </div>
+          <div className="flex justify-center items-center gap-x-1">
+            <img src={loyalEmblem} className="size-6" />{" "}
+            <span className="text-yellow-600 font-semibold">4345+</span>
+          </div>
+        </div>
+        <div className="flex space-x-4">
+          <Button className="bg-slate-500 text-white hover:bg-slate-600">
+            View In Detail
+          </Button>
+          {/* <Button className="bg-red-500 text-white hover:bg-red-600">
+            <DeactivateGuestModal />
+          </Button> */}
+          <DeactivateGuest />
+        </div>
       </Card>
-    </div>
-  );
+    );
+  }
+  return users.map((user) => <UserCard key={user.userId} {...user} />);
 };
 
-export default VisitorsList;
+export default Guests;

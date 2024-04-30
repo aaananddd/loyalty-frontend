@@ -84,7 +84,7 @@ const Sidebar = () => {
                       "w-full h-10 font-medium p-6 flex  items-center text-center hover:bg-primary rounded  duration-75"
                     }
                   >
-                    Earn Point
+                    Earn Points
                   </NavLink>
                   <NavLink
                     to={routePath.burnPoint}
@@ -93,7 +93,7 @@ const Sidebar = () => {
                       "w-full h-10 font-medium p-6 flex border-b  items-center text-center hover:bg-primary rounded  duration-75"
                     }
                   >
-                    Burn Point
+                    Burn Points
                   </NavLink>
                 </ul>
               </AccordionContent>
